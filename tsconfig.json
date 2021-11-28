@@ -5,20 +5,31 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     //"forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    //"module": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "module": "commonjs",
+    // "module": "commonjs",
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "forceConsistentCasingInFileNames": false
+
+    //Nest
+    // "removeComments": true,
+    // "sourceMap": true,
+    // "outDir": "./dist",
+    // "baseUrl": "./",
+    // "strictNullChecks": false,
+    // "noImplicitAny": false,
+    // "strictBindCallApply": false,
+    // "noFallthroughCasesInSwitch": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
