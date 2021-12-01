@@ -1,16 +1,14 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { useState } from "react";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState } from 'react';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
-  const [resData, setResData] = useState<string>("");
+  const [resData, setResData] = useState<string>('');
 
   const test = async () => {
-    const res: any = await fetch("../api/test").then((response) =>
-      response.json()
-    );
+    const res: any = await fetch('../api/test').then((response) => response.json());
     setResData(res.test);
   };
 

@@ -1,3 +1,4 @@
+//Nest.jsのService呼び出し(DI)でエラーが発生しないようにするために必要
 {
   "presets": ["next/babel"],
   "plugins": [

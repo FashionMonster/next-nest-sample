@@ -1,11 +1,11 @@
-import { ValidationPipe } from "@nestjs/common";
-import { NestFactory } from "@nestjs/core";
-import { ExpressAdapter } from "@nestjs/platform-express";
-import cookieParser from "cookie-parser";
-import express, { Express } from "express";
-import helmet from "helmet";
-import { NextApiRequest, NextApiResponse } from "next";
-import { AppModule } from "../../interfaces/controllers/app.module";
+import { ValidationPipe } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import cookieParser from 'cookie-parser';
+import express, { Express } from 'express';
+import helmet from 'helmet';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { AppModule } from '../../domains/usecases/app.module';
 
 export const config = {
   api: { bodyParser: false },
@@ -18,20 +18,18 @@ const handler = async (req: NextApiRequest, resp: NextApiResponse) => {
     await inMemoryHandler(req, resp);
 
     return new Promise((resolve) => {
-      resp.on("finish", resolve);
+      resp.on('finish', resolve);
     });
   }
 
   const requestHandler = express();
 
-  const app = await NestFactory.create(
-    AppModule,
-    new ExpressAdapter(requestHandler),
-    { logger: ["error", "warn"] }
-  );
+  const app = await NestFactory.create(AppModule, new ExpressAdapter(requestHandler), {
+    logger: ['error', 'warn'],
+  });
 
   // https://docs.nestjs.com/faq/global-prefix
-  app.setGlobalPrefix("api");
+  app.setGlobalPrefix('api');
 
   // CORSを有効にする
   // https://docs.nestjs.com/security/cors
@@ -57,7 +55,7 @@ const handler = async (req: NextApiRequest, resp: NextApiResponse) => {
   await requestHandler(req, resp);
 
   return new Promise((resolve) => {
-    resp.on("finish", resolve);
+    resp.on('finish', resolve);
   });
 };
 

@@ -1,8 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Next.js に Nest.js を組み込んだサンプルプロジェクト
 
-## Getting Started
+## 技術構成
 
-First, run the development server:
+言語　　　　　　：TypeScript
+ライブラリ　　　：React
+フレームワーク１：Next.js
+フレームワーク２：Nest.js
+アーキテクチャ　：クリーンアーキテクチャ(ディレクトリ構成)
+パッケージ管理　：yarn
+その他設定　　　：Prettier,ESLint,babel
+
+## 始め方
+
+１：ソースのクローン
+
+```bash
+git clone https://github.com/FashionMonster/next-nest-sample.git
+```
+
+２：パッケージをインストール
+
+```bash
+npm install
+# or
+yarn
+```
+
+３：プロジェクトの起動
 
 ```bash
 npm run dev
@@ -10,25 +34,43 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+４：ブラウザで http://localhost:3000 を開く
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+５：テストボタンをクリックして、「Hello World!」と表示されれば OK
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 作成過程
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+１：[Next.js（TypeScript）の雛形プロジェクト作成](https://nextjs.org/docs/basic-features/typescript)
 
-## Learn More
+```bash
+npx create-next-app@latest --ts
+# or
+yarn create next-app --typescript
+```
 
-To learn more about Next.js, take a look at the following resources:
+２：[Nest.js に必要なパッケージをインストール](https://docs.nestjs.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm i --save @nestjs/core @nestjs/common rxjs reflect-metadata
+# or
+yarn add @nestjs/core @nestjs/common rxjs reflect-metadata
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+３：[pages/api 配下に\[...routes\].ts を作成する　※"routes"は別の名前でも問題ない](https://nextjs.org/docs/api-routes/dynamic-api-routes#catch-all-api-routes)
 
-## Deploy on Vercel
+４：\[...routes\].ts に Nest.js アプリケーションインスタンスの生成とミドルウェアを設定
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+５：[Controllers, Service, Domain, Infrastructure フォルダを作成。](https://kkoudev.netlify.app/2020/05/nextjs-architecture-design/)さらに Nest.js の contoroller, service, module ファイル を作成
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+６：Nest.js の s サービスを DI する箇所でエラーが発生するので、.babelrc を作成
+
+７：tsconfig.json の設定（デコレータの有効化など）
+
+８：ESLint と Prettier の設定
+　　 prettier と eslint-config-prettier をインストール
+　　 .prettierrc を作成、eslintrc.json を編集
+　　[VSCode の拡張機能をインストール](https://qiita.com/genbu-jp/items/a48bcb9df209b71c2de3)
+
+９：「始め方」の３以降を実行
+
+## デプロイ方法

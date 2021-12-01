@@ -21,15 +21,12 @@
     "target": "es2017",
     "forceConsistentCasingInFileNames": false
 
-    //Nest
-    // "removeComments": true,
     // "sourceMap": true,
     // "outDir": "./dist",
     // "baseUrl": "./",
     // "strictNullChecks": false,
     // "noImplicitAny": false,
     // "strictBindCallApply": false,
-    // "noFallthroughCasesInSwitch": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
