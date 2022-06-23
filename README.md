@@ -68,9 +68,9 @@ yarn add @nestjs/core @nestjs/common rxjs reflect-metadata
 
 ７：tsconfig.json の設定（デコレータの有効化など）
 
-８：ESLint と Prettier の設定
-prettier と eslint-config-prettier をインストール
-prettierrc を作成、eslintrc.json を編集
+８：ESLint と Prettier の設定　　
+prettier と eslint-config-prettier をインストール　　
+prettierrc を作成、eslintrc.json を編集　　
 [VSCode の拡張機能をインストール](https://qiita.com/genbu-jp/items/a48bcb9df209b71c2de3)
 
 ９：「始め方」の３以降を実行
