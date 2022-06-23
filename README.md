@@ -2,15 +2,6 @@ Next.js に Nest.js を組み込んだサンプルプロジェクト
 
 ## 技術構成
 
-言語　　　　　　：TypeScript
-ライブラリ　　　：React
-フレームワーク１：Next.js
-フレームワーク２：Nest.js
-アーキテクチャ　：クリーンアーキテクチャ(ディレクトリ構成)
-パッケージ管理　：yarn
-その他設定　　　：Prettier,ESLint,babel
-
-
 | 項目              | 技術                              |
 | ----------------- | --------------------------------- |
 | 言語              | TypeScript                        |
@@ -73,13 +64,13 @@ yarn add @nestjs/core @nestjs/common rxjs reflect-metadata
 
 ５：[Controllers, Service, Domain, Infrastructure フォルダを作成。](https://kkoudev.netlify.app/2020/05/nextjs-architecture-design/)さらに Nest.js の contoroller, service, module ファイル を作成
 
-６：Nest.js の s サービスを DI する箇所でエラーが発生するので、.babelrc を作成
+６：Nest.js のサービスを DI する箇所でエラーが発生するので、.babelrc を作成
 
 ７：tsconfig.json の設定（デコレータの有効化など）
 
 ８：ESLint と Prettier の設定
 prettier と eslint-config-prettier をインストール
 prettierrc を作成、eslintrc.json を編集
-　　[VSCode の拡張機能をインストール](https://qiita.com/genbu-jp/items/a48bcb9df209b71c2de3)
+[VSCode の拡張機能をインストール](https://qiita.com/genbu-jp/items/a48bcb9df209b71c2de3)
 
 ９：「始め方」の３以降を実行
