@@ -10,6 +10,17 @@ Next.js に Nest.js を組み込んだサンプルプロジェクト
 パッケージ管理　：yarn
 その他設定　　　：Prettier,ESLint,babel
 
+
+| 項目              | 技術                              |
+| ----------------- | --------------------------------- |
+| 言語              | TypeScript                        |
+| ライブラリ        | React                             |
+| フレームワーク１  | Next.js                           |
+| フレームワーク２  | Nest.js                           |
+| アーキテクチャ    | クリーンアーキテクチャ            |
+| その他設定        | Prettier,ESLint,babel etc..       |
+
+
 ## 始め方
 
 １：ソースのクローン
@@ -67,10 +78,8 @@ yarn add @nestjs/core @nestjs/common rxjs reflect-metadata
 ７：tsconfig.json の設定（デコレータの有効化など）
 
 ８：ESLint と Prettier の設定
-　　 prettier と eslint-config-prettier をインストール
-　　 .prettierrc を作成、eslintrc.json を編集
+prettier と eslint-config-prettier をインストール
+prettierrc を作成、eslintrc.json を編集
 　　[VSCode の拡張機能をインストール](https://qiita.com/genbu-jp/items/a48bcb9df209b71c2de3)
 
 ９：「始め方」の３以降を実行
-
-## デプロイ方法
